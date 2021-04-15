@@ -13,4 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'pedidos.index');
+Route::get('/','PedidoController@index')->name('pedidos.index');
+Route::post('/pedido/create', 'PedidoController@create')->name('criar.pedido');

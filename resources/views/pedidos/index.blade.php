@@ -28,21 +28,25 @@
 
     <!-- Exibindo success -->
     @if (Session::has('success'))
-      <div id="alert" class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+      <div id="alert" class="alert alert-success alert-dismissible fade show mt-2 text-center" role="alert">
         <strong>{{ Session::get('success') }}</strong>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     @endif
 
     <!-- Exibindo errors -->
-    @if (Session::has('error_valor_minimo'))
-      <div id="alert" class="alert alert-warning alert-dismissible fade show mt-2 text-center" role="alert">
-        <strong>{{ Session::get('error_valor_minimo') }}</strong>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+    @if (Session::has('error'))
+      <div id="alert" class="alert alert-danger alert-dismissible fade show mt-2 text-center" role="alert">
+        <strong>{{ Session::get('error') }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    @endif
+
+    <!-- Exibindo messages -->
+    @if (Session::has('message'))
+      <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+        <strong>{{ Session::get('message') }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     @endif
 
@@ -56,7 +60,7 @@
             <div class="row no-gutters align-items-center p-3">
               <div class="col mr-2">
                 <div class="fs-5 font-weight-bold text-primary mb-1">Total de Pedidos</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">30</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pedidos_total }}</div>
               </div>
               <div class="col-auto">
                 <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -72,8 +76,8 @@
           <div class="card-body">
             <div class="row no-gutters align-items-center p-3">
               <div class="col mr-2">
-                <div class="fs-5 font-weight-bold text-primary mb-1">Total de Produtos</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">30</div>
+                <div class="fs-5 font-weight-bold text-primary mb-1">Produtos Disponíveis</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $produtos_disponiveis }}</div>
               </div>
               <div class="col-auto">
                 <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -90,7 +94,7 @@
             <div class="row no-gutters align-items-center p-3">
               <div class="col mr-2">
                 <div class="fs-5 font-weight-bold text-danger mb-1">Cancelados</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">30</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pedidos_cancelados }}</div>
               </div>
               <div class="col-auto">
                 <i class="fas fa-times fa-2x text-gray-300"></i>
@@ -107,7 +111,7 @@
             <div class="row no-gutters align-items-center p-3">
               <div class="col mr-2">
                 <div class="fs-5 font-weight-bold text-success mb-1">Receita</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">R$ 300,00</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">R$ {{ $receita }}</div>
               </div>
               <div class="col-auto">
                 <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -117,69 +121,60 @@
         </div>
       </div>
 
-      <div class="mt-2">
-        <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#addPedido"><i class="fa fa-plus" data-bs-toggle="tooltip" data-bs-placement="top" title="Criar Novo Pedido"></i> Criar Novo Pedido</button>
-      </div>
       
-      <div class="col col-md-12 mt-1">
-        <div class="card border-left-primary shadow h-100">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col">
-                    <div class="row row-cols-4 px-2">
-                      <table class="table table-hover table-dark">
-                        <thead>
-                          <tr>
-                            <th class="col text-white"><b>Pedido Nº</b> 1518</th>
-                            <th class="col text-white"><b>Cliente:</b> Osmar Santos Jr</th>
-                            <th class="col text-white"><b>Cpf:</b> 025.985.848-30</th>
-                            <th class="col text-white"><b>E-mail</b> osmar#teste.com</th>
-                            <td class="text-center">
-                              <button class="btn btn-sm btn-light mx-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar Pedido"><i class="fas fa-pencil-alt"></i></button>
-                              <button class="btn btn-sm btn-light mx-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Remover Pedido"><i class="fas fa-trash text-danger"></i></button>
-                            </td>
-                          </tr>
-                        </thead>
-                      </table>
-                    </div>
+      @foreach ($pedidos as $pedido)
+        <div class="col col-md-12 mt-2">
+          <div class="card border-left-primary shadow h-100">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col">
+                  <div class="row row-cols-4 px-2">
+                    <table class="table table-hover table-dark">
+                      <thead>
+                        <tr>
+                          <th class="col text-white"><b>Pedido Nº</b> {{ $pedido->id}}</th>
+                          <th class="col text-white"><b>Cliente:</b> {{ $pedido->cliente }}</th>
+                          <th class="col text-white"><b>Cpf:</b> {{ $pedido->cpf }}</th>
+                          <th class="col text-white"><b>E-mail</b> {{ $pedido->email }}</th>
+                          <td class="text-center">
+                            <button class="btn btn-sm btn-light mx-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Remover Pedido"><i class="fas fa-trash text-danger"></i></button>
+                          </td>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
                 </div>
+           
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Produto</th>
+                      <th scope="col" class="text-center">Quantidade</th>
+                      <th scope="col" class="text-center">Preço Unitário</th>
+                      <th scope="col" class="text-center">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($pedido['produto'] as $produto)
+                      <tr>
+                        <td>{{ $produto->nome }}</td>
+                        <td class="text-center">{{ $produto->quantidade_comprada }}</td>
+                        <td class="text-center">{{ $produto->preco }}</td>
+                        <td class="text-center">{{ $produto->total }}</td>
+                      </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+                
               </div>
-              
-              <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">Produto</th>
-                    <th scope="col">Quantidade</th>
-                    <th scope="col">Preço</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td >Larry the Bird</td>
-                    <td>Thornton</td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
           </div>
         </div>
-      </div>
+      @endforeach
 
       <div class="">
         <button class="btn btn-success buttonFloat" type="button" data-bs-toggle="modal" data-bs-target="#addPedido"><i class="fa fa-plus" data-bs-toggle="tooltip" data-bs-placement="top" title="Criar Pedido"></i></button>
       </div>
-
     </div>
   </div>
 
@@ -192,35 +187,47 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form>
-               
+
+              <div class="alert alert-primary text-center" role="alert">
+                <strong>Selecione um cliente e a quantidade dos produtos .</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+
+              <form method="POST" action="{{ route('criar.pedido') }}">
+                @csrf
+                
                 <div class="form-group mt-2 mb-4">
-                    <select class="form-control w-100" id="cliente" name="cliente" required>
+                    <select class="form-control-lg w-100" id="cliente" name="cliente" required>
                       <option selected value="">Selecione um Cliente</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                      @foreach ($clientes as $cliente)
+                        <option value="{{ $cliente->id }}">{{ $cliente->nome }}</option>
+                      @endforeach
                     </select>
                 </div>
 
-                <div class="row my-2 text-center">
-                  <div class="col">
-                    <label for="">Produto</label>
-                    <input type="text" name="produto" value="" class="form-control text-center" placeholder="Caneta" required disabled>
+                @foreach ($produtos as $produto)
+                  <div class="row my-4 text-center">
+                    
+                    <input type="hidden" name="produto_id[]" value="{{ $produto->id }}" class="form-control text-center" required>
+                    
+                    <div class="col">
+                      <label for="">Produto</label>
+                      <input type="text" name="produto[]" value="{{ $produto->nome }}" class="form-control text-center" required readonly>
+                    </div>
+                    <div class="col">
+                      <label for="">Valor Unitário</label>
+                      <input type="text" name="valor[]" value="{{ $produto->preco }}" class="form-control text-center"required readonly>
+                    </div>
+                    <div class="col">
+                      <label for="">Disponíveis</label>
+                      <input type="text" name="disponiveis[]" value="{{$produto->disponiveis}}" class="form-control text-center" required readonly>
+                    </div>
+                    <div class="col">
+                      <label for="">Quantidade</label>
+                      <input type="number" name="quantidade[]" value="" class="form-control text-center" min="0" max="{{ $produto->disponiveis }}" placeholder="0" >
+                    </div>
                   </div>
-                  <div class="col">
-                    <label for="">Valor Unitário</label>
-                    <input type="text" name="valor" value="" class="form-control text-center" placeholder="R$ 1,99" required disabled>
-                  </div>
-                  <div class="col">
-                    <label for="">Disponíveis</label>
-                    <input type="text" name="disponiveis" value="" class="form-control text-center" placeholder="350" required disabled>
-                  </div>
-                  <div class="col">
-                    <label for="">Quantidade</label>
-                    <input type="number" name="quantidade" value="" class="form-control text-center" min="0" max="2" placeholder="0" value="" required>
-                  </div>
-                </div>
+                @endforeach
 
                 <div class="d-grid mt-4">
                   <button class="btn btn-primary" type="submit">Gerar Pedido</button>
