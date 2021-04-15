@@ -23,9 +23,4 @@ class Produto extends Model
         'quantidade',
         'disponiveis'
     ];
-
-    public function pedidos() 
-    {
-        return $this->belongsTo('App\Models\Pedido');
-    }
 }

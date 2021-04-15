@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','PedidoController@index')->name('pedidos.index');
 Route::post('/pedido/create', 'PedidoController@create')->name('criar.pedido');
+Route::get('/pedido/delete/{id}', 'PedidoController@delete')->name('excluir.pedido');

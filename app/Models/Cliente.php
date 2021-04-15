@@ -22,10 +22,4 @@ class Cliente extends Model
         'email',
         'cpf',
     ];
-
-    // Definindo relação 1:N entre clientes  e pedidos
-    public function pedidos()
-    {
-        return $this->hasMany('App\Models\Pedido');
-    }
 }

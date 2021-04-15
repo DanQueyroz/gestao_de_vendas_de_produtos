@@ -18,7 +18,7 @@
 </head>
 <body>
 
-    <!-- Begin Page Content -->
+  <!-- Begin Page Content -->
   <div class="container-fluid px-4 mt-3">
 
     <!-- Page Heading -->
@@ -121,7 +121,6 @@
         </div>
       </div>
 
-      
       @foreach ($pedidos as $pedido)
         <div class="col col-md-12 mt-2">
           <div class="card border-left-primary shadow h-100">
@@ -137,7 +136,9 @@
                           <th class="col text-white"><b>Cpf:</b> {{ $pedido->cpf }}</th>
                           <th class="col text-white"><b>E-mail</b> {{ $pedido->email }}</th>
                           <td class="text-center">
-                            <button class="btn btn-sm btn-light mx-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Remover Pedido"><i class="fas fa-trash text-danger"></i></button>
+                            <form method="GET" action="pedido/delete/{{$pedido->id}}">
+                              <button class="btn btn-sm btn-light mx-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Remover Pedido" onclick="return confirm(&quot;Deseja realmente excluir o pedido Nº {{$pedido->id}}?&quot;)"><i class="fas fa-trash text-danger"></i></button>
+                            </form>
                           </td>
                         </tr>
                       </thead>
@@ -230,7 +231,7 @@
                 @endforeach
 
                 <div class="d-grid mt-4">
-                  <button class="btn btn-primary" type="submit">Gerar Pedido</button>
+                  <button class="btn btn-lg btn-primary" type="submit">Gerar Pedido</button>
                 </div>
               </form>
     

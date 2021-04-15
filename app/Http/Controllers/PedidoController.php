@@ -66,7 +66,6 @@ class PedidoController extends Controller
             }
             $pedido->produto = $lista_produtos;
         }
-
         $receita = number_format($receita, 2, ',', '.');
         
         return view('pedidos.index', compact(
@@ -140,7 +139,6 @@ class PedidoController extends Controller
                 }
             }
 
-            $teste = [];
             if ($pedido_produtos) {
 
                 // Criando o pedido e inserindo os produtos
@@ -156,11 +154,25 @@ class PedidoController extends Controller
                     $pedido_produto->save();
                 }
             }
-
             return redirect()->back()->with('success', 'Pedido incluído com sucesso!');
 
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Desculpe, ocorreu um erro de comunicação com o servidor.');
         }
+    }
+
+    public function delete($id)
+    {
+        // Recuperando pedido pelo ID e verificando se o mesmo existe
+        $pedido = Pedido::find($id);
+        if (!$pedido) {
+            return redirect()->back()->with('error', 'Desculpe, pedido não encontrado.');
+        }
+
+        // Efetuando exclusão lógica do pedido
+        $pedido->status = false;
+        $pedido->update();
+
+        return redirect()->back()->with('success', 'Pedido removido com sucesso!');
     }
 }

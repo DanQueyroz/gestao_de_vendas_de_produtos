@@ -22,10 +22,4 @@ class Pedido_Produto extends Model
         'pedido_id',
         'produto_id'
     ];
-
-    // Definindo relação 1:N entre pedidos e produtos
-    public function produtos() 
-    {
-        return $this->hasMany('App\Models\Produto');
-    }
 }

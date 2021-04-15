@@ -21,16 +21,4 @@ class Pedido extends Model
         'status',
         'cliente_id',
     ];
-
-    // Definindo relação 1:N entre pedidos e produtos
-    public function produtos() 
-    {
-        return $this->hasMany('App\Models\Produto');
-    }
-
-    // Definindo relação N:1 entre pedidos e cliente
-    public function cliente()
-    {
-        return $this->belongsTo('App\Models\Cliente');
-    }
 }
