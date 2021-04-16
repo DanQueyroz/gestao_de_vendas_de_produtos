@@ -103,7 +103,7 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
 
     Configure o GIT.
 
-        $ git config --global user.name "SeuNome"
+        $ git config --global user.name "NomeDeUsuario"
         $ git config --global user.email "email@exemplo.br"
 
 <br>
