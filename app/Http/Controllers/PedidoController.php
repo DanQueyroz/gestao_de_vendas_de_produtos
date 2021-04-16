@@ -75,7 +75,8 @@ class PedidoController extends Controller
             'produtos_disponiveis', 
             'pedidos_total', 
             'pedidos_cancelados', 
-            'receita'));
+            'receita'
+        ));
     }
 
     public function create(Request $request)
@@ -139,6 +140,7 @@ class PedidoController extends Controller
                 }
             }
 
+            // Os pedidos só serão gerados caso ao menos 1 produto seja enviado
             if ($pedido_produtos) {
 
                 // Criando o pedido e inserindo os produtos
