@@ -49,8 +49,8 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
 
     4 - Configure o GIT:
 
-        $ git config --global user.name "Fulano de Tal"
-        $ git config --global user.email fulanodetal@exemplo.br
+        $ git config --global user.name "NomeDeUsuario"
+        $ git config --global user.email "email@exemplo.br"
 
 </br>
 
