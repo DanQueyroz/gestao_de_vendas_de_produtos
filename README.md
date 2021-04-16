@@ -155,10 +155,7 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
 
     <br>
 
-    
-    <a href=“https://github.com/DanQueyroz/gestao_de_vendas_de_produtos/blob/master/gestao_vendas.sql“>Script SQL</a>
-
-    
+    <a href=“https://github.com/DanQueyroz/gestao_de_vendas_de_produtos/blob/master/gestao_vendas.sql/“>Script SQL</a>
 
     <br>
 
@@ -185,7 +182,7 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
     ---
     <center>
 
-    ## Tecnologias Utilizadas
+    ## Linguagens e Tecnologias Utilizadas
 
     <center>
 
@@ -194,11 +191,13 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
     <br>
 
     <p align="center">
-    <img src="public//images/laravel.png" width="200" height="70" title="Laravel" alt="Página inicial do sistema">
+    <img src="public//images/php.png" width="200" height="70" title="PHP" alt="PHP">
 
-    <img src="public//images/mysql.png" width="200" height="70" title="MySQL" alt="Página inicial do sistema">
+    <img src="public//images/laravel.png" width="200" height="70" title="Laravel" alt="Laravel">
 
-    <img src="public//images/bootstrap.png" width="200" height="70" title="Bootstrap" alt="Página inicial do sistema">
+    <img src="public//images/mysql.png" width="200" height="70" title="MySQL" alt="MySQL">
+
+    <img src="public//images/bootstrap.png" width="200" height="70" title="Bootstrap" alt="Bootstrap">
     </p>
 
     ---
