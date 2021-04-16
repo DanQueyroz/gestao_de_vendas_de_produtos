@@ -187,13 +187,13 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
     <br>
 
     <p align="center">
-    <img src="public//images/php.png" width="200" height="70" title="PHP" alt="PHP">
+    <img src="public//images/php.png" width="170" height="70" title="PHP" alt="PHP">
 
-    <img src="public//images/laravel.png" width="200" height="70" title="Laravel" alt="Laravel">
+    <img src="public//images/laravel.png" width="170" height="70" title="Laravel" alt="Laravel">
 
-    <img src="public//images/mysql.png" width="200" height="70" title="MySQL" alt="MySQL">
+    <img src="public//images/mysql.png" width="170" height="70" title="MySQL" alt="MySQL">
 
-    <img src="public//images/bootstrap.png" width="200" height="70" title="Bootstrap" alt="Bootstrap">
+    <img src="public//images/bootstrap.png" width="170" height="70" title="Bootstrap" alt="Bootstrap">
     </p>
 
     ---
