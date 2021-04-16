@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="public//images/home.png" alt="Página inicial do sistema">
+  <img src="public//images/home.png" width="" alt="Página inicial do sistema">
 </p>
 
-<div align=”center”>
+<center>
 
 # Gestão de Vendas de Produtos
 
-</div>
+</center>
 
 
 <br>
@@ -163,33 +163,35 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
 
         localhost:8000
 
+    <b> 
+
     Essa deve ser a página inicial
 
     <p align="center">
     <img src="public//images/inicial.png" width="400" alt="Página inicial do sistema">
     </p>
 
-
-
     <br>
 
-    <div align=”center”>
-
     ---
+    <center>
 
     ## Tecnologias Utilizadas
 
+    <center>
+
     ---
 
     <br>
 
-    <img src="public//images/laravel.png" width="150" height="50" alt="Página inicial do sistema">
+    <p align="center">
+    <img src="public//images/laravel.png" width="200" height="70" title="Laravel" alt="Página inicial do sistema">
 
-    <img src="public//images/mysql.png" width="150" height="50" alt="Página inicial do sistema">
+    <img src="public//images/mysql.png" width="200" height="70" title="MySQL" alt="Página inicial do sistema">
 
-    <img src="public//images/bootstrap.png" width="150" height="50" alt="Página inicial do sistema">
+    <img src="public//images/bootstrap.png" width="200" height="70" title="Bootstrap" alt="Página inicial do sistema">
+    </p>
 
     ---
 
-    </div>
 
