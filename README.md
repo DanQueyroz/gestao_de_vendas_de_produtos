@@ -155,6 +155,17 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
 
     <br>
 
+    
+    <a href=“https://github.com/DanQueyroz/gestao_de_vendas_de_produtos/blob/master/gestao_vendas.sql/“>
+
+    ### __Script SQL__
+    
+    </a>
+
+    
+
+    <br>
+
     9 - Inicie o servidor 
 
         php artisan serve
@@ -168,8 +179,10 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
     Essa deve ser a página inicial
 
     <p align="center">
-    <img src="public//images/inicial.png" width="400" alt="Página inicial do sistema">
+    <img src="public//images/inicial.png" width="800" alt="Página inicial do sistema">
     </p>
+
+    ### __Dica:__ É possível executar o comando __php artisan migrate:fresh --seed__ sempre que desejar apagar todos os dados armazenados no banco de dados e popular somente as tabelas clientes e produtos novamente
 
     <br>
 
