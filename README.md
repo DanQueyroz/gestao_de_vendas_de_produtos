@@ -103,8 +103,8 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
 
     Configure o GIT.
 
-        $ git config --global user.name "Fulano de Tal"
-        $ git config --global user.email fulanodetal@exemplo.br
+        $ git config --global user.name "SeuNome"
+        $ git config --global user.email "email@exemplo.br"
 
 <br>
 
@@ -128,8 +128,8 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
 
         composer update
 
-    4 - Copie e cole o arquivo __.env.example__ na raiz do projeto e o renomei para 
-    __.env__.
+    4 - Renomei o arquivo __.env.example__ na raiz do projeto para __.env__ 
+    __(caso não consiga visualizar o arquivo, marque a opção exibir arquivos ocultos em seu sistema)__.
 
     5 - Gere uma nova chave para aplicação.
 
@@ -137,7 +137,7 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
 
     6 - Crie uma base de dados com o nome que desejar, formato __ut8mb4_unicode_ci__.
 
-    7 - Acesse o arquivo __.env__ e configure as variáveis de conexão com o banco de dados
+    7 - Acesse o arquivo __.env__ e configure as variáveis de conexão com o banco de dados de acordo com o criado.
 
     <p align="center">
     <img src="public//images/bd_env.png" alt="Página inicial do sistema">
