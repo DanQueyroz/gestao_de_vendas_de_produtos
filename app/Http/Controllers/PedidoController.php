@@ -165,16 +165,21 @@ class PedidoController extends Controller
 
     public function delete($id)
     {
-        // Recuperando pedido pelo ID e verificando se o mesmo existe
-        $pedido = Pedido::find($id);
-        if (!$pedido) {
-            return redirect()->back()->with('error', 'Desculpe, pedido não encontrado.');
-        }
+        try {
+            
+            // Recuperando pedido pelo ID e verificando se o mesmo existe
+            $pedido = Pedido::find($id);
+            if (!$pedido) {
+                return redirect()->back()->with('error', 'Desculpe, pedido não encontrado.');
+            }
 
-        // Efetuando exclusão lógica do pedido
-        $pedido->status = false;
-        $pedido->update();
+            // Efetuando exclusão lógica do pedido
+            $pedido->status = false;
+            $pedido->update();
 
-        return redirect()->back()->with('success', 'Pedido removido com sucesso!');
+            return redirect()->back()->with('success', 'Pedido removido com sucesso!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Desculpe, ocorreu um erro de comunicação com o servidor.');
+        } 
     }
 }
