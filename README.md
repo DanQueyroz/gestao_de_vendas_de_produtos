@@ -18,8 +18,6 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
 
 <br>
 
-----
-
 ## Requisitos
 
 - PHP na versão 7.3 ou superior.
@@ -110,8 +108,6 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
 
 <br>
 
----
-
 ## Configurações
 
 <br>
@@ -175,7 +171,7 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
 
     <br>
 
-    ---
+
     <center>
 
     ## Linguagens e Tecnologias Utilizadas
