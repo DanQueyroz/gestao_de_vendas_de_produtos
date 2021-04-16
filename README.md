@@ -22,7 +22,7 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
 
 Copie e cole o link: https://godsales.herokuapp.com/ no navegador __Mozilla Firefoz__ ou __Internet Explorer__ (testados) para um breve teste on-line.
 
-__Obs:__ O aplicativo foi hospedado sem certificado SSL, por essa razão será possivel criar ou remover pedidos no Google Chrome por exemplo. 
+__Obs:__ O aplicativo foi hospedado sem certificado SSL, por essa razão não será possivel criar ou remover pedidos no Google Chrome por exemplo. 
 
 <br>
 
