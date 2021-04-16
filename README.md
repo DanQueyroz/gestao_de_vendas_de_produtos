@@ -2,11 +2,11 @@
   <img src="public//images/home.png" alt="Página inicial do sistema">
 </p>
 
-<center>
+<div align=”center”>
 
 # Gestão de Vendas de Produtos
 
-</center>
+</div>
 
 
 <br>
@@ -173,7 +173,7 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
 
     <br>
 
-    <center>
+    <div align=”center”>
 
     ---
 
@@ -190,4 +190,6 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
     <img src="public//images/bootstrap.png" width="150" height="50" alt="Página inicial do sistema">
 
     ---
+
+    </div>
 
