@@ -156,11 +156,7 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
     <br>
 
     
-    <a href=“https://github.com/DanQueyroz/gestao_de_vendas_de_produtos/blob/master/gestao_vendas.sql/“>
-
-    ### __Script SQL__
-    
-    </a>
+    <a href=“https://github.com/DanQueyroz/gestao_de_vendas_de_produtos/blob/master/gestao_vendas.sql“>Script SQL</a>
 
     
 
