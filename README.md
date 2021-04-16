@@ -151,11 +151,7 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
 
         php artisan migrate --seed
 
-    ### __Obs:__ Esse comando irá criar todas as tabelas do sistema e ainda popular as tabelas __clientes__ e __produtos__ para que o sistema funcione corretamente. Mas caso deseje também é possível utilizar o script sql disponibilizado na raiz do projeto fazer o mesmo:
-
-    <br>
-
-    <a href=“https://github.com/DanQueyroz/gestao_de_vendas_de_produtos/blob/master/gestao_vendas.sql/“>Script SQL</a>
+    ### __Obs:__ Esse comando irá criar todas as tabelas do sistema e ainda popular as tabelas __clientes__ e __produtos__ para que o sistema funcione corretamente. Mas caso deseje também é possível utilizar o script sql disponibilizado na raiz do projeto para fazer o mesmo:
 
     <br>
 
