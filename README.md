@@ -2,26 +2,26 @@
   <img src="public//images/home.png" width="" alt="Página inicial do sistema">
 </p>
 
+<br>
+
 <center>
 
 # Gestão de Vendas de Produtos
 
 </center>
 
-
 <br>
 
----
-
 ## Descrição
----
 
 Sistema simples para gestão de vendas de produtos, onde será possível criar pedido(s) relacionado a um cliente, de acordo com a quantidade do produto disponível em estoque e remover os pedidos criados.
+
+<br>
 
 ----
 
 ## Requisitos
----
+
 - PHP na versão 7.3 ou superior.
 - BCMath PHP Extensão ativa.
 - Ctype PHP Extensão ativa.
@@ -40,7 +40,7 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
 ---
 
 ## Instalação
----
+
 - ### Windows
 
     1 - Faça download do <a href="https://www.apachefriends.org/pt_br/download.html">xampp</a> na versão 7.3 ou superior instale e inicie o servidor apache e o banco MySQL.
@@ -114,7 +114,7 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
 
 ## Configurações
 
----
+<br>
 
 - ### Tendo em vista que já tenha-se os recursos necessários para rodar o projeto use o powershel no windows ou o terminal no linux:
 
@@ -181,8 +181,6 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
     ## Linguagens e Tecnologias Utilizadas
 
     <center>
-
-    ---
 
     <br>
 
