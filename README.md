@@ -18,7 +18,6 @@ Sistema simples para gestão de vendas de produtos, onde será possível criar p
 
 <br>
 
----
 ## Demo
 
 Copie e cole o link: https://godsales.herokuapp.com/ no navegador __Mozilla Firefoz__ ou __Internet Explorer__ (testados) para um breve teste on-line.
